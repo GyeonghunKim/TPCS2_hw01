@@ -10,7 +10,7 @@ void print_vector(const std::vector<double> &a){
     for(int i = 0; i < a.size(); ++i){
         std::cout << a[i] << "\t";
     }
-    std::cout <<"]";
+    std::cout <<"]"<<std::endl;
 }
 
 std::vector<double> sum(const std::vector<double> &a, const std::vector<double> &b){
