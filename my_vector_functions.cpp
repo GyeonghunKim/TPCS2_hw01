@@ -5,6 +5,13 @@
 #include <vector>
 #include "my_vector_functions.h"
 
+void print_vector(const std::vector<double> &a){
+    std::cout << "[";
+    for(int i = 0; i < a.size(); ++i){
+        std::cout << a[i] << "\t";
+    }
+    std::cout <<"]";
+}
 
 std::vector<double> sum(const std::vector<double> &a, const std::vector<double> &b){
     std::vector<double> z(a.size());

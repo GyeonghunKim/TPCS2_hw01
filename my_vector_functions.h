@@ -8,6 +8,11 @@
 #include <iostream>
 #include <vector>
 //
+// print vector
+// function for my convince
+void print_vector(const std::vector<double> &a);
+
+//
 // return sum of two input vectors
 std::vector<double> sum(const std::vector<double> &a, const std::vector<double> &b);
 
@@ -17,7 +22,7 @@ double dot(const std::vector<double> &a, const std::vector<double> &b);
 
 //
 //  generate vector with linear spaced value with start value, stop value and number of points
-std::vector<double> linspace(const std::vector<double> &start, const std::vector<double> &stop, const int &num_points);
+std::vector<double> linspace(const double &start, const double &stop, const int &num_points);
 
 //
 //  return integrate data with trapezoidal methods
