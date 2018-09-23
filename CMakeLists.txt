@@ -3,4 +3,4 @@ project(hw01)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(hw01 main.cpp my_vector_functions.h my_vector_functions.cpp test_functions.h)
+add_executable(hw01 main.cpp my_vector_functions.h my_vector_functions.cpp test_functions.h test_functions.cpp)
