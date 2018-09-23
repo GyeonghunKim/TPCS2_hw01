@@ -22,4 +22,7 @@ int main() {
     std::cout << "**************test function dot**********************" << std::endl;
     run_test(test_dot, "test_dot");
 
+    std::cout << "**************test function linspace**********************" << std::endl;
+    run_test(test_linspace, "test_linspace");
+
 }

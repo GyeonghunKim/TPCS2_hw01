@@ -69,7 +69,36 @@ bool test_dot(){
     }
 }
 
-//bool test_linspace()
+bool test_linspace(){
+    const unsigned int seed = time(0);
+    std::mt19937_64 rng(seed);
+    std::uniform_int_distribution<int> unii(1, 50);
+    int vector_size = unii(rng);
+    bool isTrue = true;
+    const std::vector<double> lin_test = linspace(0, vector_size - 1, vector_size);
+    for(int i = 0; i < vector_size; ++i){
+        if(lin_test[i] != i){
+            isTrue = false;
+            break;
+        }
+    }
+
+    if(VERBOSE) {
+        std::cout << "vector size is " << vector_size << std::endl;
+        std::cout << "linspace(0," << vector_size - 1 << "," << vector_size << ") : ";
+        print_vector(lin_test);
+
+    }
+
+    if (isTrue){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
 //bool test_integrate()
 bool run_test(std::function<bool(void)> func, const std::string& function_name){
     bool isTrue = func();
