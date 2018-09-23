@@ -25,4 +25,7 @@ int main() {
     std::cout << "**************test function linspace**********************" << std::endl;
     run_test(test_linspace, "test_linspace");
 
+    std::cout << "**************test function integrate**********************" << std::endl;
+    run_test(test_integrate, "test_integrate");
+
 }

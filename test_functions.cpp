@@ -82,14 +82,12 @@ bool test_linspace(){
             break;
         }
     }
-
     if(VERBOSE) {
         std::cout << "vector size is " << vector_size << std::endl;
         std::cout << "linspace(0," << vector_size - 1 << "," << vector_size << ") : ";
         print_vector(lin_test);
 
     }
-
     if (isTrue){
         return true;
     }
@@ -99,7 +97,31 @@ bool test_linspace(){
 
 }
 
-//bool test_integrate()
+bool test_integrate(){
+    // for get random number
+    const unsigned int seed = time(0);
+    std::mt19937_64 rng(seed);
+    std::uniform_int_distribution<int> unii(1, 50);
+    int vector_size = unii(rng);
+
+    const std::vector<double> a = linspace(0, vector_size - 1, vector_size);
+    const std::vector<double> b = linspace(0, 2 * (vector_size - 1), vector_size);
+    double integrate_result = integrate(a, b);
+    if(VERBOSE) {
+        std::cout << "vector size is " << vector_size << std::endl;
+        std::cout << "a: ";
+        print_vector(a);
+        std::cout << "b: ";
+        print_vector(b);
+        std::cout << "integrage(a, b): " << integrate_result << std::endl;
+    }
+    if (integrate_result == (vector_size - 1)*(vector_size - 1)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 bool run_test(std::function<bool(void)> func, const std::string& function_name){
     bool isTrue = func();
     if (isTrue){
@@ -110,4 +132,4 @@ bool run_test(std::function<bool(void)> func, const std::string& function_name){
     }
     return isTrue;
 }
-//bool run_all_tests()
+bool run_all_tests()
