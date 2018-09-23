@@ -16,7 +16,10 @@ int main() {
     double inte_result = integrate(a, b);
     std::cout << "integral product result: " << inte_result << std::endl;
 
-    std::cout << "*****************************************************************" << std::endl;
-
+    std::cout << "**************test function sum**********************" << std::endl;
     run_test(test_sum, "test_sum");
+
+    std::cout << "**************test function dot**********************" << std::endl;
+    run_test(test_dot, "test_dot");
+
 }
