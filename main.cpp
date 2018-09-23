@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "my_vector_functions.h"
+#include "test_functions.h"
+
 int main() {
-    std::vector<double> a = linspace(0, 10, 11);
-    std::vector<double> b = linspace(0, 20, 11);
+    const std::vector<double> a = linspace(0, 10, 11);
+    const std::vector<double> b = linspace(0, 20, 11);
     print_vector(a);
     print_vector(b);
     std::vector<double> sum_result = sum(a, b);
@@ -14,7 +16,7 @@ int main() {
     double inte_result = integrate(a, b);
     std::cout << "integral product result: " << inte_result << std::endl;
 
+    std::cout << "*****************************************************************" << std::endl;
 
-    //test problem 1
-
+    run_test(test_sum, "test_sum");
 }

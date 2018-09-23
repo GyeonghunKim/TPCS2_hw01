@@ -12,10 +12,27 @@
 
 #include "test_functions.h"
 
+// if VERBOSE true, print all vectors while run functions in test_functions.cpp
+#define VERBOSE false
 
 
 bool test_sum(){
-
+    int vector_size = std::rand()/(RAND_MAX/100 + 1);
+    std::cout << vector_size << std::endl;
+    const std::vector<double> a = linspace(0, vector_size - 1, vector_size);
+    const std::vector<double> b = linspace(0, 2 * (vector_size - 1), vector_size);
+    std::vector<double> sum_result = sum(a, b);
+    if(VERBOSE) {
+        print_vector(a);
+        print_vector(b);
+        print_vector(sum_result);
+    }
+    if (sum_result == linspace(0, 3 * (vector_size - 1), vector_size)){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 //bool test_dot()
 

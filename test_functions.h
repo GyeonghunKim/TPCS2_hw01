@@ -30,7 +30,7 @@ bool test_integrate();
 
 //
 // function for run test
-bool run_test();
+bool run_test(std::function<bool(void)> func, const std::string& function_name);
 
 //
 // run all tests
