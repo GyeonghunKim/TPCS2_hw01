@@ -5,7 +5,7 @@
 #include <iostream>
 #include <functional>
 #include <vector>
-
+#include <string>
 // header for random function
 #include <ctime>
 #include <random>
@@ -132,4 +132,30 @@ bool run_test(std::function<bool(void)> func, const std::string& function_name){
     }
     return isTrue;
 }
-bool run_all_tests()
+
+bool run_all_tests(){
+    std::vector<bool> results;
+    const std::vector<std::string> name_test= {"test_linspace", "test_sum", "test_dot", "test_integrate"};
+    results.push_back(run_test(test_linspace, name_test[0]));
+    results.push_back(run_test(test_sum, name_test[1]));
+    results.push_back(run_test(test_dot, name_test[2]));
+    results.push_back(run_test(test_integrate, name_test[3]));
+    bool one_is_false = false;
+    for (int i = 0; i<4; ++i){
+        if(results[i]){
+            std::cout << "test \"" << name_test[i] << "  PASSED" << std::endl;
+        }
+        else{
+            std::cout << "test \"" << name_test[i] << "  FAILED" << std::endl;
+            one_is_false = true;
+        }
+    }
+    if(!one_is_false){
+        std::cout <<"**************all test passed!!****************";
+    }
+    else{
+        std::cout <<"**************some test failed!!****************";
+    }
+
+}
+

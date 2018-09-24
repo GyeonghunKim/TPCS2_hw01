@@ -28,4 +28,7 @@ int main() {
     std::cout << "**************test function integrate**********************" << std::endl;
     run_test(test_integrate, "test_integrate");
 
+    std::cout << "**************run all test**********************" << std::endl;
+    run_all_tests();
+
 }
