@@ -1,12 +1,18 @@
 //
 // Created by ghkim on 18. 9. 20.
 //
-
+//  SNU-ID: 2016-16746
+//
+//  Homework 01
+//
+//
+//  header file for my vector functions (print, sum, dot product, integrate)
 #ifndef HW01_MY_VECTOR_FUNCTIONS_H
 #define HW01_MY_VECTOR_FUNCTIONS_H
 
 #include <iostream>
 #include <vector>
+
 //
 // print vector
 // function for my convince
